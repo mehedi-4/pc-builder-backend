@@ -10,9 +10,8 @@ const fs = require('fs');
 const path = require('path');
 
 app.get('/images/by-id/:productid', (req, res) => {
-  const dir = path.join(__dirname, 'public/cpu-images');
+  const dir = path.join(__dirname, 'public/images');
   const { productid } = req.params;
-
   const extensions = ['jpg', 'jpeg', 'webp', 'png'];
   for (const ext of extensions) {
     const filename = `${productid}.${ext}`;
@@ -21,11 +20,10 @@ app.get('/images/by-id/:productid', (req, res) => {
       return res.sendFile(filepath);
     }
   }
-
   res.status(404).send('Image not found');
 });
 
-app.use('/images', express.static(__dirname + '/public/cpu-images'));
+app.use('/images', express.static(__dirname + '/public/images'));
 
 
 const db = mysql.createConnection({
@@ -51,5 +49,16 @@ app.get('/api/cpu', (req,res) =>{
         res.json(results);
     });
 });
+
+
+app.get('/api/mobo', (req,res) =>{
+    db.query(`SELECT * FROM mobolist`, (err, results) => {
+        if(err) {
+            return res.status(500).json({error: err.message});
+        }
+        res.json(results);
+    });
+});
+
 
 app.listen(3000);
