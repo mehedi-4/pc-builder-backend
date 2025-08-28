@@ -60,5 +60,31 @@ app.get('/api/mobo', (req,res) =>{
     });
 });
 
+app.get('/api/ram', (req,res) =>{
+    db.query(`SELECT * FROM ramlist`, (err, results) => {
+        if(err) {
+            return res.status(500).json({error: err.message});
+        }
+        res.json(results);
+    });
+});
+
+app.get('/api/ssd', (req,res) =>{
+    db.query(`SELECT * FROM ssdlist`, (err, results) => {
+        if(err) {
+            return res.status(500).json({error: err.message});
+        }
+        res.json(results);
+    });
+});
+
+app.get('/api/gpu', (req,res) =>{
+    db.query(`SELECT * FROM gpulist`, (err, results) => {
+        if(err) {
+            return res.status(500).json({error: err.message});
+        }
+        res.json(results);
+    });
+});
 
 app.listen(3000);
