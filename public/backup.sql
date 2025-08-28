@@ -48,6 +48,37 @@ INSERT INTO `cpulist` VALUES ('CPU001','Intel','Intel Core i3-12100 12th Gen Ald
 UNLOCK TABLES;
 
 --
+-- Table structure for table `gpulist`
+--
+
+DROP TABLE IF EXISTS `gpulist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `gpulist` (
+  `productid` varchar(10) NOT NULL,
+  `brand` varchar(10) NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `price` varchar(6) NOT NULL,
+  `vram` varchar(4) NOT NULL,
+  `memory_type` varchar(6) NOT NULL,
+  `boost_clock` varchar(7) NOT NULL,
+  `tdp` varchar(4) NOT NULL,
+  `pcie_version` varchar(8) NOT NULL,
+  PRIMARY KEY (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `gpulist`
+--
+
+LOCK TABLES `gpulist` WRITE;
+/*!40000 ALTER TABLE `gpulist` DISABLE KEYS */;
+INSERT INTO `gpulist` VALUES ('GPU001','MSI','MSI GeForce RTX 3060 Ventus 2X 12G OC','45000','12GB','GDDR6','1807MHz','170W','PCIe 4.0'),('GPU002','Gigabyte','Gigabyte GeForce RTX 3060 Ti Gaming OC 8G','56000','8GB','GDDR6','1770MHz','200W','PCIe 4.0'),('GPU003','PowerColor','PowerColor Red Devil RX 6700 XT','62000','12GB','GDDR6','2581MHz','230W','PCIe 4.0'),('GPU004','Asus','Asus Dual GeForce RTX 3070 8GB','72000','8GB','GDDR6','1755MHz','220W','PCIe 4.0'),('GPU005','XFX','XFX Speedster SWFT 309 Radeon RX 6700 10GB','58000','10GB','GDDR6','2495MHz','175W','PCIe 4.0'),('GPU006','MSI','MSI Radeon RX 6600 Mech 2X 8G','40000','8GB','GDDR6','2491MHz','132W','PCIe 4.0'),('GPU007','Gigabyte','Gigabyte Radeon RX 6600 Eagle 8G','39500','8GB','GDDR6','2491MHz','132W','PCIe 4.0'),('GPU008','PowerColor','PowerColor Fighter RX 6600 XT','45000','8GB','GDDR6','2589MHz','160W','PCIe 4.0'),('GPU009','Asus','Asus TUF Gaming GeForce RTX 3080 12GB OC','115000','12GB','GDDR6X','1785MHz','350W','PCIe 4.0'),('GPU010','XFX','XFX Speedster MERC 319 RX 6800 XT','95000','16GB','GDDR6','2250MHz','300W','PCIe 4.0'),('GPU011','MSI','MSI Gaming X Trio GeForce RTX 4080 Super 16GB','190000','16GB','GDDR6X','2625MHz','320W','PCIe 4.0'),('GPU012','Gigabyte','Gigabyte AORUS Master RTX 4070 Ti Super 16GB','150000','16GB','GDDR6X','2640MHz','285W','PCIe 4.0'),('GPU013','PowerColor','PowerColor Red Dragon RX 6800 16GB','88000','16GB','GDDR6','2190MHz','250W','PCIe 4.0'),('GPU014','Asus','Asus ROG Strix RTX 4090 24GB OC','335000','24GB','GDDR6X','2640MHz','450W','PCIe 4.0'),('GPU015','XFX','XFX Speedster MERC 319 RX 7900 XTX','210000','24GB','GDDR6','2615MHz','355W','PCIe 4.0'),('GPU016','MSI','MSI Ventus 3X GeForce RTX 3050 8GB','35000','8GB','GDDR6','1807MHz','130W','PCIe 4.0'),('GPU017','Gigabyte','Gigabyte Eagle GeForce RTX 3050 8GB','34000','8GB','GDDR6','1777MHz','130W','PCIe 4.0'),('GPU018','PowerColor','PowerColor Hellhound RX 6650 XT','48000','8GB','GDDR6','2694MHz','180W','PCIe 4.0'),('GPU019','Asus','Asus Dual Radeon RX 6650 XT OC','49000','8GB','GDDR6','2689MHz','180W','PCIe 4.0'),('GPU020','XFX','XFX QICK 319 RX 6750 XT','67000','12GB','GDDR6','2623MHz','250W','PCIe 4.0'),('GPU021','MSI','MSI Gaming X GeForce RTX 4060 Ti 8GB','58000','8GB','GDDR6','2655MHz','160W','PCIe 4.0'),('GPU022','Gigabyte','Gigabyte Gaming OC RTX 4060 Ti 8GB','57500','8GB','GDDR6','2655MHz','160W','PCIe 4.0'),('GPU023','PowerColor','PowerColor Red Devil RX 7900 XT','185000','20GB','GDDR6','2500MHz','315W','PCIe 4.0'),('GPU024','Asus','Asus TUF Gaming RX 7900 XT OC','182000','20GB','GDDR6','2535MHz','315W','PCIe 4.0'),('GPU025','XFX','XFX Speedster SWFT 210 RX 6600','37000','8GB','GDDR6','2491MHz','132W','PCIe 4.0'),('GPU026','MSI','MSI Aero ITX GeForce GTX 1660 Super 6GB','30000','6GB','GDDR6','1785MHz','125W','PCIe 3.0'),('GPU027','Gigabyte','Gigabyte Windforce GeForce GTX 1660 Ti 6GB','32000','6GB','GDDR6','1770MHz','120W','PCIe 3.0'),('GPU028','PowerColor','PowerColor Fighter RX 6500 XT','25000','4GB','GDDR6','2825MHz','107W','PCIe 4.0'),('GPU029','Asus','Asus Phoenix RTX 3050 6GB','28000','6GB','GDDR6','1470MHz','115W','PCIe 4.0'),('GPU030','XFX','XFX Speedster SWFT 105 RX 6400','22000','4GB','GDDR6','2321MHz','53W','PCIe 4.0');
+/*!40000 ALTER TABLE `gpulist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `mobolist`
 --
 
@@ -78,6 +109,68 @@ LOCK TABLES `mobolist` WRITE;
 INSERT INTO `mobolist` VALUES ('MB001','MSI','MSI A520M-A Pro AM4 AMD Micro-ATX Motherboar','8000','AM4','Micro-ATX','DDR4','2x','3','AMD Ryzen 5000/4000G Series & AMD Ryzen 3rd Generation Processors'),('MB002','MSI','MSI B450M-A PRO MAX II AMD AM4 Motherboard','8500','AM4','Micro-ATX','DDR4','2x','3','AMD Ryzen 5000/4000G Series & AMD Ryzen 3rd Generation Processors'),('MB003','MSI','MSI PRO H610M-S DDR4 m-ATX Motherboard','10000','LGA1700','Micro-ATX','DDR4','2x','4','14th/13th/12th Gen Intel Processors'),('MB004','MSI','MSI PRO H610M-E mATX Motherboard','11000','LGA1700','Micro-ATX','DDR5','2x','4','14th/13th/12th Gen Intel Processors'),('MB005','MSI','MSI B550M-A PRO DDR4 AMD AM4 Micro ATX Motherboard','12000','AM4','Micro-ATX','DDR4','4x','4','AMD Ryzen 5000 & 3000 Series desktop processors'),('MB006','Asus','ASUS TUF GAMING B760M-PLUS II LGA1700 Micro-ATX Motherboard','22300','LGA1700','Micro-ATX','DDR5','4x','4','14th, 13th Gen & 12th Gen Processors'),('MB007','Gigabyte','GIGABYTE Z790 D DDR4 ATX Motherboar','26800','LGA1700','ATX','DDR5','4x','4','14th, 13th Gen & 12th Gen Processors'),('MB008','MSI','MSI PRO H810M-B DDR5 LGA1851 mATX Motherboard','17000','LGA1851','Micro-ATX','DDR5','2x','5','Intel Core Ultra Processors (Series 2),'),('MB009','Asus','Asus PRIME B860-PLUS WIFI-CSM LGA 1851 ATX Motherboard','29000','LGA1851','ATX','DDR5','4x','5','Intel Core Ultra Processors (Series 2),'),('MB010','Gigabyte','Gigabyte Z890 UD LGA 1851 ATX Motherboard','31000','LGA1851','ATX','DDR5','4x','5','Intel Core Ultra Processors (Series 2),'),('MB011','MSI','MSI PRO A620M-E AMD AM5 mATX Motherboard','11300','AM5','Micro-ATX','DDR5','2x','4','Ryzen 9000/ 8000 / 7000 Series Processors'),('MB012','Gigabyte','GIGABYTE B650M K AMD AM5 Micro-ATX Motherboard','14000','AM5','Micro-ATX','DDR5','4x','4','Ryzen 8000 & 7000 Series Processors for Socket AM5'),('MB013','MSI','MSI PRO B840-P WIFI AMD AM5 ATX Motherboard','22600','AM5','ATX','DDR5','4x','5','Ryzen 9000/ 8000 / 7000 Series Processors'),('MB014','AsRock','ASRock X870 Pro RS WiFi AM5 DDR5 ATX Motherboard','35500','AM5','ATX','DDR5','4x','5','Ryzen 9000/ 8000 / 7000 Series Processors'),('MB015','Asus','Asus TUF GAMING B850M-PLUS WIFI micro-ATX Motherboard','36500','AM5','Micro-ATX','DDR5','4x','5','Ryzen 9000/ 8000 / 7000 Series Processors'),('MB016','Gigabyte','GIGABYTE A620M H AM5 Micro-ATX Motherboard','12000','AM5','Micro-ATX','DDR5','2x','4','Ryzen 9000/ 8000 / 7000 Series Processors'),('MB017','Gigabyte','GIGABYTE B650M D3HP DDR5 AM5 Motherboard','17500','AM5','ATX','DDR5','4x','4','Ryzen 9000/ 8000 / 7000 Series Processors'),('MB018','MSI','MSI PRO B650M-B DDR5 AMD AM5 m-ATX Motherboard','12800','AM5','Micro-ATX','DDR5','2x','4','Ryzen 9000/ 8000 / 7000 Series Processors'),('MB019','AsRock','ASRock B850M-X WiFi AM5 DDR5 Micro ATX Motherboard','18500','AM5','Micro-ATX','DDR5','2x','4','Ryzen 9000/ 8000 / 7000 Series Processors');
 /*!40000 ALTER TABLE `mobolist` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `ramlist`
+--
+
+DROP TABLE IF EXISTS `ramlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ramlist` (
+  `productid` varchar(6) NOT NULL,
+  `brand` varchar(9) NOT NULL,
+  `name` varchar(48) NOT NULL,
+  `price` int NOT NULL,
+  `type` varchar(4) NOT NULL,
+  `capacity` varchar(5) NOT NULL,
+  `frequency` varchar(7) NOT NULL,
+  `caslatency` varchar(14) NOT NULL,
+  PRIMARY KEY (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ramlist`
+--
+
+LOCK TABLES `ramlist` WRITE;
+/*!40000 ALTER TABLE `ramlist` DISABLE KEYS */;
+INSERT INTO `ramlist` VALUES ('RAM001','Corsair','Corsair Vengeance LPX 8GB DDR4 3200MHz',2500,'DDR4','8GB','3200MHz','CL16-18-18-36'),('RAM002','Kingston','Kingston Fury Beast 8GB DDR4 3200MHz',2400,'DDR4','8GB','3200MHz','CL16-18-18-30'),('RAM003','G.Skill','G.Skill Ripjaws V 16GB DDR4 3600MHz',4800,'DDR4','16GB','3600MHz','CL18-22-22-42'),('RAM004','Corsair','Corsair Vengeance RGB Pro 16GB DDR4 3200MHz',5200,'DDR4','16GB','3200MHz','CL16-18-18-36'),('RAM005','ADATA','ADATA XPG GAMMIX D30 8GB DDR4 3000MHz',2300,'DDR4','8GB','3000MHz','CL16-18-18'),('RAM006','TeamGroup','Team T-Force Vulcan Z 16GB DDR4 3200MHz',4700,'DDR4','16GB','3200MHz','CL16-20-20-40'),('RAM007','Kingston','Kingston Fury Renegade 16GB DDR4 3600MHz',5500,'DDR4','16GB','3600MHz','CL16-18-18-36'),('RAM008','G.Skill','G.Skill Trident Z RGB 32GB DDR4 3600MHz',9500,'DDR4','32GB','3600MHz','CL16-16-16-36'),('RAM009','Corsair','Corsair Dominator Platinum RGB 32GB DDR5 5600MHz',18500,'DDR5','32GB','5600MHz','CL36-36-36-76'),('RAM010','ADATA','ADATA XPG Lancer RGB 16GB DDR5 5200MHz',11000,'DDR5','16GB','5200MHz','CL38-38-38-84'),('RAM011','Kingston','Kingston Fury Beast 16GB DDR5 6000MHz',12500,'DDR5','16GB','6000MHz','CL40-40-40-80'),('RAM012','G.Skill','G.Skill Ripjaws S5 32GB DDR5 6000MHz',21000,'DDR5','32GB','6000MHz','CL36-36-36-96'),('RAM013','Patriot','Patriot Viper Steel 8GB DDR4 3200MHz',2400,'DDR4','8GB','3200MHz','CL16-18-18-36'),('RAM014','TeamGroup','Team T-Force Delta RGB 32GB DDR4 3600MHz',9800,'DDR4','32GB','3600MHz','CL18-22-22-42'),('RAM015','Corsair','Corsair Vengeance 64GB DDR5 5600MHz',36000,'DDR5','64GB','5600MHz','CL36-36-36-76'),('RAM016','ADATA','ADATA XPG Spectrix D41 8GB DDR4 3200MHz',2500,'DDR4','8GB','3200MHz','CL16-18-18'),('RAM017','Kingston','Kingston HyperX Predator 8GB DDR4 3000MHz',2200,'DDR4','8GB','3000MHz','CL15-17-17'),('RAM018','G.Skill','G.Skill Flare X 16GB DDR4 3200MHz',4600,'DDR4','16GB','3200MHz','CL16-18-18-38'),('RAM019','Patriot','Patriot Signature Line 4GB DDR4 2400MHz',1500,'DDR4','4GB','2400MHz','CL17-17-17'),('RAM020','TeamGroup','Team T-Force Vulcan DDR5 32GB 5600MHz',19000,'DDR5','32GB','5600MHz','CL36-36-36-76'),('RAM021','Corsair','Corsair ValueSelect 4GB DDR4 2400MHz',1400,'DDR4','4GB','2400MHz','CL16-16-16'),('RAM022','ADATA','ADATA Premier 8GB DDR4 2666MHz',2000,'DDR4','8GB','2666MHz','CL19-19-19'),('RAM023','Kingston','Kingston Fury Beast RGB 32GB DDR5 6000MHz',20000,'DDR5','32GB','6000MHz','CL40-40-40-80'),('RAM024','G.Skill','G.Skill Trident Z5 RGB 64GB DDR5 6400MHz',42000,'DDR5','64GB','6400MHz','CL32-39-39-102'),('RAM025','Patriot','Patriot Viper RGB 16GB DDR4 3600MHz',5200,'DDR4','16GB','3600MHz','CL18-22-22-42'),('RAM026','TeamGroup','Team Elite Plus 8GB DDR4 2666MHz',1900,'DDR4','8GB','2666MHz','CL19-19-19'),('RAM027','Corsair','Corsair Dominator Platinum 128GB DDR5 5600MHz',72000,'DDR5','128GB','5600MHz','CL36-36-36-76'),('RAM028','ADATA','ADATA XPG Hunter 16GB DDR4 3200MHz',4500,'DDR4','16GB','3200MHz','CL16-20-20-38'),('RAM029','Kingston','Kingston ValueRAM 8GB DDR4 2400MHz',1800,'DDR4','8GB','2400MHz','CL17-17-17'),('RAM030','G.Skill','G.Skill Aegis 8GB DDR4 3000MHz',2100,'DDR4','8GB','3000MHz','CL16-18-18-38');
+/*!40000 ALTER TABLE `ramlist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ssdlist`
+--
+
+DROP TABLE IF EXISTS `ssdlist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ssdlist` (
+  `productid` varchar(6) NOT NULL,
+  `brand` varchar(8) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `price` int NOT NULL,
+  `capacity` varchar(5) NOT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `read_speed` varchar(9) NOT NULL,
+  `write_speed` varchar(9) NOT NULL,
+  `nand_type` varchar(3) NOT NULL,
+  `endurance_tbw` varchar(7) NOT NULL,
+  PRIMARY KEY (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ssdlist`
+--
+
+LOCK TABLES `ssdlist` WRITE;
+/*!40000 ALTER TABLE `ssdlist` DISABLE KEYS */;
+INSERT INTO `ssdlist` VALUES ('SSD001','Samsung','Samsung 970 EVO Plus 250GB',3800,'250GB','PCIe 3.0 NVMe','3500MB/s','2300MB/s','MLC','150TBW'),('SSD002','WD','WD Black SN850X 1TB',12500,'1TB','PCIe 4.0 NVMe','7300MB/s','6300MB/s','TLC','600TBW'),('SSD003','Crucial','Crucial P3 Plus 500GB',4500,'500GB','PCIe 4.0 NVMe','5000MB/s','3600MB/s','QLC','120TBW'),('SSD004','ADATA','ADATA XPG SX8200 Pro 1TB',9200,'1TB','PCIe 3.0 NVMe','3500MB/s','3000MB/s','TLC','640TBW'),('SSD005','Kingston','Kingston NV2 250GB',2900,'250GB','PCIe 4.0 NVMe','3000MB/s','1300MB/s','QLC','80TBW'),('SSD006','Samsung','Samsung 980 PRO 2TB',23000,'2TB','PCIe 4.0 NVMe','7000MB/s','5100MB/s','TLC','1200TBW'),('SSD007','WD','WD Blue SN570 500GB',4000,'500GB','PCIe 3.0 NVMe','3500MB/s','2300MB/s','TLC','150TBW'),('SSD008','Crucial','Crucial P5 Plus 2TB',21000,'2TB','PCIe 4.0 NVMe','6600MB/s','5000MB/s','TLC','1200TBW'),('SSD009','ADATA','ADATA Legend 840 1TB',9800,'1TB','PCIe 4.0 NVMe','5000MB/s','4500MB/s','TLC','600TBW'),('SSD010','Kingston','Kingston KC3000 1TB',13500,'1TB','PCIe 4.0 NVMe','7000MB/s','6000MB/s','TLC','800TBW'),('SSD011','Samsung','Samsung 990 PRO 1TB',16500,'1TB','PCIe 4.0 NVMe','7450MB/s','6900MB/s','TLC','600TBW'),('SSD012','WD','WD Black SN770 500GB',5800,'500GB','PCIe 4.0 NVMe','5150MB/s','4900MB/s','TLC','300TBW'),('SSD013','Crucial','Crucial T700 1TB',22000,'1TB','PCIe 5.0 NVMe','12400MB/s','11800MB/s','TLC','700TBW'),('SSD014','ADATA','ADATA XPG Lancer 512GB',5600,'500GB','PCIe 4.0 NVMe','5000MB/s','4000MB/s','TLC','300TBW'),('SSD015','Kingston','Kingston Fury Renegade 2TB',25500,'2TB','PCIe 4.0 NVMe','7300MB/s','7000MB/s','TLC','1000TBW'),('SSD016','Samsung','Samsung PM9A1 512GB',6400,'500GB','PCIe 4.0 NVMe','6900MB/s','5000MB/s','TLC','300TBW'),('SSD017','WD','WD Blue SN580 250GB',3100,'250GB','PCIe 4.0 NVMe','4100MB/s','2000MB/s','TLC','150TBW'),('SSD018','Crucial','Crucial P3 1TB',7500,'1TB','PCIe 3.0 NVMe','3500MB/s','3000MB/s','QLC','220TBW'),('SSD019','ADATA','ADATA XPG Gammix S70 Blade 1TB',10800,'1TB','PCIe 4.0 NVMe','7400MB/s','5500MB/s','TLC','700TBW'),('SSD020','Kingston','Kingston A2000 500GB',4800,'500GB','PCIe 3.0 NVMe','2200MB/s','2000MB/s','TLC','150TBW'),('SSD021','Samsung','Samsung 970 EVO Plus 2TB',17500,'2TB','PCIe 3.0 NVMe','3500MB/s','3300MB/s','TLC','1200TBW'),('SSD022','WD','WD Black SN850 500GB',7500,'500GB','PCIe 4.0 NVMe','7000MB/s','4100MB/s','TLC','300TBW'),('SSD023','Crucial','Crucial P2 250GB',2800,'250GB','PCIe 3.0 NVMe','2300MB/s','940MB/s','QLC','80TBW'),('SSD024','ADATA','ADATA XPG SX6000 Pro 512GB',4200,'500GB','PCIe 3.0 NVMe','2100MB/s','1500MB/s','TLC','150TBW'),('SSD025','Kingston','Kingston NV1 1TB',6900,'1TB','PCIe 3.0 NVMe','2100MB/s','1700MB/s','QLC','240TBW'),('SSD026','Samsung','Samsung 980 500GB',5200,'500GB','PCIe 3.0 NVMe','3100MB/s','2600MB/s','TLC','300TBW'),('SSD027','WD','WD Green SN350 960GB',5500,'1TB','PCIe 3.0 NVMe','2400MB/s','1900MB/s','QLC','200TBW'),('SSD028','Crucial','Crucial BX500 NVMe 480GB',3600,'500GB','PCIe 3.0 NVMe','2100MB/s','1600MB/s','TLC','150TBW'),('SSD029','ADATA','ADATA XPG Atom 50 1TB',10200,'1TB','PCIe 4.0 NVMe','5000MB/s','4500MB/s','TLC','600TBW'),('SSD030','Kingston','Kingston Fury Renegade 4TB',48500,'4TB','PCIe 4.0 NVMe','7300MB/s','7000MB/s','TLC','2000TBW');
+/*!40000 ALTER TABLE `ssdlist` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -88,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-28 16:46:45
+-- Dump completed on 2025-08-29  3:53:18
