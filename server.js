@@ -87,4 +87,22 @@ app.get('/api/gpu', (req,res) =>{
     });
 });
 
+app.get('/api/psu', (req,res) =>{
+    db.query(`SELECT * FROM psulist`, (err, results) => {
+        if(err) {
+            return res.status(500).json({error: err.message});
+        }
+        res.json(results);
+    });
+});
+
+app.get('/api/case', (req,res) =>{
+    db.query(`SELECT * FROM caselist`, (err, results) => {
+        if(err) {
+            return res.status(500).json({error: err.message});
+        }
+        res.json(results);
+    });
+});
+
 app.listen(3000);
