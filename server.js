@@ -41,68 +41,32 @@ db.connect(err => {
     console.log("connected");
 });
 
-app.get('/api/cpu', (req,res) =>{
-    db.query(`SELECT * FROM cpulist`, (err, results) => {
-        if(err) {
-            return res.status(500).json({error: err.message});
+
+const tables = {
+    cpu: "cpulist",
+    mobo: "mobolist",
+    ram: "ramlist",
+    ssd: "ssdlist",
+    gpu: "gpulist",
+    psu: "psulist",
+    case: "caselist"
+};
+
+app.get('/api/:component', (req, res) => {
+    const component = req.params.component;
+
+    if (!tables[component]) {
+        return res.status(400).json({ error: "Invalid component type" });
+    }
+
+    const table = tables[component];
+    db.query(`SELECT * FROM ${table}`, (err, results) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
         }
         res.json(results);
     });
 });
 
-
-app.get('/api/mobo', (req,res) =>{
-    db.query(`SELECT * FROM mobolist`, (err, results) => {
-        if(err) {
-            return res.status(500).json({error: err.message});
-        }
-        res.json(results);
-    });
-});
-
-app.get('/api/ram', (req,res) =>{
-    db.query(`SELECT * FROM ramlist`, (err, results) => {
-        if(err) {
-            return res.status(500).json({error: err.message});
-        }
-        res.json(results);
-    });
-});
-
-app.get('/api/ssd', (req,res) =>{
-    db.query(`SELECT * FROM ssdlist`, (err, results) => {
-        if(err) {
-            return res.status(500).json({error: err.message});
-        }
-        res.json(results);
-    });
-});
-
-app.get('/api/gpu', (req,res) =>{
-    db.query(`SELECT * FROM gpulist`, (err, results) => {
-        if(err) {
-            return res.status(500).json({error: err.message});
-        }
-        res.json(results);
-    });
-});
-
-app.get('/api/psu', (req,res) =>{
-    db.query(`SELECT * FROM psulist`, (err, results) => {
-        if(err) {
-            return res.status(500).json({error: err.message});
-        }
-        res.json(results);
-    });
-});
-
-app.get('/api/case', (req,res) =>{
-    db.query(`SELECT * FROM caselist`, (err, results) => {
-        if(err) {
-            return res.status(500).json({error: err.message});
-        }
-        res.json(results);
-    });
-});
 
 app.listen(3000);
