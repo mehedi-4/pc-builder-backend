@@ -7,11 +7,24 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "mysql2": "^3.14.3"
-  }
+    "fs": "^0.0.1-security",
+    "mysql2": "^3.14.4",
+    "node-fetch": "^3.3.2",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mehedi-4/pc-builder-backend.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/mehedi-4/pc-builder-backend/issues"
+  },
+  "homepage": "https://github.com/mehedi-4/pc-builder-backend#readme"
 }
