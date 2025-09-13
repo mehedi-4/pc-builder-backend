@@ -16,6 +16,36 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `caselist`
+--
+
+DROP TABLE IF EXISTS `caselist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `caselist` (
+  `productid` varchar(7) NOT NULL,
+  `brand` varchar(14) NOT NULL,
+  `name` varchar(34) NOT NULL,
+  `price` int NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `form_factor` varchar(28) NOT NULL,
+  `features` varchar(35) NOT NULL,
+  `gpu_clearance` varchar(5) NOT NULL,
+  PRIMARY KEY (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `caselist`
+--
+
+LOCK TABLES `caselist` WRITE;
+/*!40000 ALTER TABLE `caselist` DISABLE KEYS */;
+INSERT INTO `caselist` VALUES ('CASE001','NZXT','NZXT H510',7500,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Tempered Glass, Cable Management','381mm'),('CASE002','NZXT','NZXT H7 Flow',12500,'Mid Tower','ATX/Micro-ATX/Mini-ITX','High Airflow, Modern Design','400mm'),('CASE003','NZXT','NZXT H9 Elite',30000,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Panoramic Glass, RGB, Dual-Chamber','435mm'),('CASE004','Corsair','Corsair 4000D Airflow',9500,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Excellent Airflow, Cable Management','360mm'),('CASE005','Corsair','Corsair iCUE 5000X RGB',22000,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Tempered Glass, RGB, Spacious','420mm'),('CASE006','Corsair','Corsair 7000D Airflow',35000,'Full Tower','ATX/E-ATX/Micro-ATX/Mini-ITX','Massive Airflow, Radiator Support','450mm'),('CASE007','Cooler Master','Cooler Master NR200',8500,'Mini Tower','Mini-ITX','Compact, High Airflow, SFF','330mm'),('CASE008','Cooler Master','Cooler Master MasterBox TD500 Mesh',11000,'Mid Tower','ATX/Micro-ATX/Mini-ITX','ARGB Fans, Airflow','410mm'),('CASE009','Cooler Master','Cooler Master HAF 700 EVO',38000,'Full Tower','E-ATX/ATX','Premium Airflow, Modular, RGB','490mm'),('CASE010','Fractal Design','Fractal Meshify 2',18000,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Mesh Front, Modular Design','491mm'),('CASE011','Fractal Design','Fractal Define 7',20000,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Silent Panels, Premium Build','467mm'),('CASE012','Fractal Design','Fractal North',16000,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Wooden Front, Stylish Design','355mm'),('CASE013','Lian Li','Lian Li O11 Dynamic',15000,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Dual Chamber, Tempered Glass','420mm'),('CASE014','Lian Li','Lian Li O11 Dynamic XL',25000,'Full Tower','E-ATX/ATX','High-End Watercooling Support','446mm'),('CASE015','Lian Li','Lian Li Lancool III RGB',18000,'Mid Tower','ATX/Micro-ATX/Mini-ITX','Mesh Front, RGB Fans','435mm');
+/*!40000 ALTER TABLE `caselist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `cpulist`
 --
 
@@ -111,6 +141,35 @@ INSERT INTO `mobolist` VALUES ('MB001','MSI','MSI A520M-A Pro AM4 AMD Micro-ATX 
 UNLOCK TABLES;
 
 --
+-- Table structure for table `psulist`
+--
+
+DROP TABLE IF EXISTS `psulist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `psulist` (
+  `productid` varchar(6) NOT NULL,
+  `brand` varchar(13) NOT NULL,
+  `name` varchar(33) NOT NULL,
+  `price` int NOT NULL,
+  `wattage` varchar(5) NOT NULL,
+  `efficiency` varchar(12) NOT NULL,
+  `modular` varchar(15) NOT NULL,
+  PRIMARY KEY (`productid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `psulist`
+--
+
+LOCK TABLES `psulist` WRITE;
+/*!40000 ALTER TABLE `psulist` DISABLE KEYS */;
+INSERT INTO `psulist` VALUES ('PSU001','Corsair','Corsair CV450',4000,'450W','80+ Bronze','Non-Modular'),('PSU002','Corsair','Corsair CV550',4800,'550W','80+ Bronze','Non-Modular'),('PSU003','Corsair','Corsair CX550F RGB',7500,'550W','80+ Bronze','Semi-Modular'),('PSU004','Corsair','Corsair CX650M',8800,'650W','80+ Bronze','Semi-Modular'),('PSU005','Corsair','Corsair RM650x',12500,'650W','80+ Gold','Fully Modular'),('PSU006','Corsair','Corsair RM750x',14500,'750W','80+ Gold','Fully Modular'),('PSU007','Corsair','Corsair HX850',18500,'850W','80+ Platinum','Fully Modular'),('PSU008','Corsair','Corsair AX1000',23000,'1000W','80+ Titanium','Fully Modular'),('PSU009','Corsair','Corsair RM1000e',21000,'1000W','80+ Gold','Fully Modular'),('PSU010','Corsair','Corsair AX1600i',25000,'1600W','80+ Titanium','Fully Modular'),('PSU011','Cooler Master','Cooler Master MWE 450',4200,'450W','80+ White','Non-Modular'),('PSU012','Cooler Master','Cooler Master MWE 550 Bronze',5000,'550W','80+ Bronze','Non-Modular'),('PSU013','Cooler Master','Cooler Master MWE 650 V2',6200,'650W','80+ Bronze','Non-Modular'),('PSU014','Cooler Master','Cooler Master MWE Gold 650W',9500,'650W','80+ Gold','Fully Modular'),('PSU015','Cooler Master','Cooler Master MWE Gold 750W',11000,'750W','80+ Gold','Fully Modular'),('PSU016','Cooler Master','Cooler Master V750',14000,'750W','80+ Gold','Fully Modular'),('PSU017','Cooler Master','Cooler Master V850',16500,'850W','80+ Gold','Fully Modular'),('PSU018','Cooler Master','Cooler Master V1000 Platinum',20000,'1000W','80+ Platinum','Fully Modular'),('PSU019','Cooler Master','Cooler Master V1300 Platinum',24000,'1300W','80+ Platinum','Fully Modular'),('PSU020','Cooler Master','Cooler Master XG850 Plus Platinum',22500,'850W','80+ Platinum','Fully Modular'),('PSU021','Seasonic','Seasonic S12III 500',4800,'500W','80+ Bronze','Non-Modular'),('PSU022','Seasonic','Seasonic S12III 650',6000,'650W','80+ Bronze','Non-Modular'),('PSU023','Seasonic','Seasonic Focus GX-550',9500,'550W','80+ Gold','Fully Modular'),('PSU024','Seasonic','Seasonic Focus GX-650',11500,'650W','80+ Gold','Fully Modular'),('PSU025','Seasonic','Seasonic Focus GX-750',13500,'750W','80+ Gold','Fully Modular'),('PSU026','Seasonic','Seasonic Focus PX-850',17000,'850W','80+ Platinum','Fully Modular'),('PSU027','Seasonic','Seasonic Prime GX-1000',20000,'1000W','80+ Gold','Fully Modular'),('PSU028','Seasonic','Seasonic Prime PX-1200',24000,'1200W','80+ Platinum','Fully Modular'),('PSU029','Seasonic','Seasonic Prime TX-1600',25000,'1600W','80+ Titanium','Fully Modular'),('PSU030','Seasonic','Seasonic Prime Fanless PX-500',15500,'500W','80+ Platinum','Fanless Modular');
+/*!40000 ALTER TABLE `psulist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ramlist`
 --
 
@@ -181,4 +240,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-08-29  3:53:18
+-- Dump completed on 2025-08-29 16:00:17
